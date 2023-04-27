@@ -1,0 +1,34 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "strategy_pattern::startegy_game.dart::Weapon" {
+  +void attack()
+}
+
+class "strategy_pattern::startegy_game.dart::Pistol" {
+  +void attack()
+}
+
+"strategy_pattern::startegy_game.dart::Weapon" <|-- "strategy_pattern::startegy_game.dart::Pistol"
+
+class "strategy_pattern::startegy_game.dart::Shotgun" {
+  +void attack()
+}
+
+"strategy_pattern::startegy_game.dart::Weapon" <|-- "strategy_pattern::startegy_game.dart::Shotgun"
+
+class "strategy_pattern::startegy_game.dart::MachineGun" {
+  +void attack()
+}
+
+"strategy_pattern::startegy_game.dart::Weapon" <|-- "strategy_pattern::startegy_game.dart::MachineGun"
+
+class "strategy_pattern::startegy_game.dart::Player" {
+  +Weapon? weapon
+  +void attack()
+}
+
+"strategy_pattern::startegy_game.dart::Player" o-- "strategy_pattern::startegy_game.dart::Weapon"
+
+
+@enduml
